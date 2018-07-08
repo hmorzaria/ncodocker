@@ -1,0 +1,7 @@
+FROM rocker/tidyverse
+# Install minimum requirements
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libhdf5-dev \
+    libnetcdf-dev \
+    nco
+CMD ["R"]
