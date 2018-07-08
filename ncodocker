@@ -4,7 +4,8 @@ MAINTAINER hmorzaria@hotmail.com
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libhdf5-dev \
     libnetcdf-dev \
-    nco
+    nco \
+    cdo
 ENV TZ America/Los_Angeles
 RUN ln -snf /usr/share/timezone/$TZ /etc/localtime && echo $TZ > /etc/timezone
 CMD ["R"]
