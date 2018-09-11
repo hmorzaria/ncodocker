@@ -29,6 +29,8 @@ RUN Rscript -e "install.packages('magrittr')"
 RUN Rscript -e "install.packages('raster')"
 RUN Rscript -e "install.packages('sp')"
 RUN Rscript -e "install.packages('fields')"
+RUN Rscript -e "install.packages('ncdf4')"
+RUN Rscript -e "install.packages('RNetCDF')"
 
 ENV TZ America/Los_Angeles
 RUN ln -snf /usr/share/timezone/$TZ /etc/localtime && echo $TZ > /etc/timezone
