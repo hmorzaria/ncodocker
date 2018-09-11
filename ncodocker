@@ -4,6 +4,8 @@ MAINTAINER hmorzaria@hotmail.com
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libhdf5-dev \
     libnetcdf-dev \
+    libgdal-dev \
+    libudunits2-dev \
     nco \
     cdo
     
