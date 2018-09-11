@@ -18,6 +18,17 @@ RUN \
     tar -xzf azcopy.tar.gz &&\
     ./install.sh &&\
     rm -Rf azcopy* install.sh
+    
+    #setup R configs
+RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
+RUN Rscript -e "install.packages('digest')"
+RUN Rscript -e "install.packages('tidyverse')"
+RUN Rscript -e "install.packages('data.table')"
+RUN Rscript -e "install.packages('rgdal')"
+RUN Rscript -e "install.packages('magrittr')"
+RUN Rscript -e "install.packages('raster')"
+RUN Rscript -e "install.packages('sp')"
+RUN Rscript -e "install.packages('fields')"
 
 ENV TZ America/Los_Angeles
 RUN ln -snf /usr/share/timezone/$TZ /etc/localtime && echo $TZ > /etc/timezone
